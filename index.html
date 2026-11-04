@@ -27,7 +27,7 @@ body {
   width: 100%;
   max-width: 460px;
   text-align: center;
-  padding: 35px 24px;
+  padding: 40px 24px;
   border: 1px solid #444;
   border-radius: 24px;
   background: linear-gradient(145deg, #171717, #080808);
@@ -51,140 +51,37 @@ body {
   margin-top: 7px;
 }
 
-.datetime {
-  margin: 24px auto 0;
-  padding: 11px 12px;
-  border: 1px solid #333;
-  border-radius: 12px;
-  color: #c9c9c9;
-  font-size: 13px;
-  line-height: 1.8;
-  background: #101010;
+.icon {
+  font-size: 65px;
+  margin: 40px 0 20px;
 }
 
 h1 {
-  margin-top: 28px;
-  font-size: 28px;
+  font-size: 27px;
+  margin-bottom: 15px;
 }
 
 .description {
   color: #999;
   font-size: 14px;
-  margin-top: 10px;
-  line-height: 1.8;
+  line-height: 2;
 }
 
-.gift-area {
-  height: 220px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 20px 0;
-}
-
-.gift {
-  position: relative;
-  width: 145px;
-  height: 125px;
-  animation: float 2s infinite ease-in-out;
-}
-
-.gift-box {
-  position: absolute;
-  bottom: 0;
-  width: 145px;
-  height: 95px;
-  background: linear-gradient(135deg, #eee, #777);
-  border-radius: 8px;
-  box-shadow: 0 15px 35px #000;
-}
-
-.gift-box::before {
-  content: "";
-  position: absolute;
-  width: 25px;
-  height: 100%;
-  background: linear-gradient(90deg, #555, #fff, #777);
-  left: 60px;
-}
-
-.gift-lid {
-  position: absolute;
-  top: 20px;
-  left: -8px;
-  width: 161px;
-  height: 28px;
-  background: linear-gradient(135deg, #fff, #888);
-  border-radius: 7px;
-  z-index: 2;
-}
-
-.ribbon {
-  position: absolute;
-  top: -12px;
-  left: 55px;
-  width: 35px;
-  height: 35px;
-  border: 9px solid #ddd;
-  border-radius: 50%;
-  z-index: 3;
-}
-
-@keyframes float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-12px); }
-}
-
-button {
-  width: 100%;
-  padding: 16px;
-  border: none;
-  border-radius: 12px;
-  background: linear-gradient(135deg, #fff, #aaa);
-  color: #111;
-  font-size: 16px;
-  font-weight: bold;
-  cursor: pointer;
-  transition: .3s;
-}
-
-button:hover {
-  transform: scale(1.03);
-  box-shadow: 0 0 25px #888;
-}
-
-button:disabled {
-  opacity: .5;
-  cursor: not-allowed;
-  transform: none;
-}
-
-.result {
-  display: none;
-  margin-top: 22px;
-  padding: 20px;
+.status {
+  display: inline-block;
+  margin-top: 25px;
+  padding: 10px 22px;
   border: 1px solid #555;
-  border-radius: 14px;
-  background: #151515;
+  border-radius: 30px;
+  color: #aaa;
+  font-size: 13px;
 }
 
-.result h2 {
-  font-size: 19px;
-  margin-bottom: 12px;
-}
+/* زر سيرفر ديسكورد */
 
-.prize {
-  font-size: 19px;
-  font-weight: bold;
-  color: #eee;
-  line-height: 1.8;
-}
-
-/* زر سيرفر DATE */
 .discord {
   display: block;
-  width: 100%;
-  margin-top: 22px;
+  margin-top: 20px;
   padding: 15px;
   border: 1px solid #555;
   border-radius: 30px;
@@ -193,7 +90,7 @@ button:disabled {
   text-decoration: none;
   font-size: 15px;
   font-weight: bold;
-  transition: .3s;
+  transition: 0.3s;
 }
 
 .discord:hover {
@@ -205,17 +102,7 @@ button:disabled {
 .footer {
   color: #555;
   font-size: 11px;
-  margin-top: 28px;
-}
-
-@media (max-width: 400px) {
-  .container {
-    padding: 28px 18px;
-  }
-
-  h1 {
-    font-size: 24px;
-  }
+  margin-top: 35px;
 }
 </style>
 </head>
@@ -227,32 +114,18 @@ button:disabled {
   <div class="logo">DATE <span>GIFT</span></div>
   <div class="subtitle">SPECIAL GIFT EVENT</div>
 
-  <div class="datetime" id="liveDateTime">
-    جاري تحميل التاريخ والوقت...
-  </div>
+  <div class="icon">🔒</div>
 
-  <h1>افتح هديتك 🎁</h1>
+  <h1>انتهى الرابط</h1>
 
   <p class="description">
-    عندك هدية خاصة بانتظارك
-    اضغط على الزر وافتح صندوقك واكتشف جائزتك
+    نعتذر منك انتهت مدة المشاركة في الفعالية
+    <br>
+    شكراً لكل من شارك معنا ❤️
   </p>
 
-  <div class="gift-area">
-    <div class="gift">
-      <div class="gift-lid"></div>
-      <div class="ribbon"></div>
-      <div class="gift-box"></div>
-    </div>
-  </div>
-
-  <button id="openButton" onclick="openGift()">
-    استلام الهدية
-  </button>
-
-  <div class="result" id="result">
-    <h2>🎉 مبروك عليك!</h2>
-    <div class="prize" id="prize"></div>
+  <div class="status">
+    انتهت الفعالية
   </div>
 
   <a class="discord" href="https://discord.gg/6aa" target="_blank">
@@ -264,116 +137,6 @@ button:disabled {
   </div>
 
 </div>
-
-<script>
-// التاريخ والوقت بتوقيت السعودية
-function updateDateTime() {
-  const now = new Date();
-
-  const date = now.toLocaleDateString("ar-SA", {
-    timeZone: "Asia/Riyadh",
-    weekday: "long",
-    year: "numeric",
-    month: "long",
-    day: "numeric"
-  });
-
-  const time = now.toLocaleTimeString("ar-SA", {
-    timeZone: "Asia/Riyadh",
-    hour: "2-digit",
-    minute: "2-digit",
-    second: "2-digit",
-    hour12: true
-  });
-
-  document.getElementById("liveDateTime").textContent =
-    date + " | " + time;
-}
-
-updateDateTime();
-setInterval(updateDateTime, 1000);
-
-
-// الجوائز: الاسم الظاهر منفصل عن نسبة السحب
-const prizes = [
-  { name: "💰 50M ProBot Credits", chance: 30 },
-  { name: "🚀 Discord Boosts", chance: 0.5 },
-  { name: "💎 Nitro Promo", chance: 1 },
-  { name: "🎮 حساب فورت نايت", chance: 3 },
-  { name: "💰 300M ProBot Credits", chance: 0.9 },
-  { name: "🟣 50 Robux", chance: 1 },
-  { name: "💰 100M ProBot Credits", chance: 5 },
-  { name: "🟣 10 Robux", chance: 3 },
-  { name: "🟣 20 Robux", chance: 2 },
-  { name: "💬 حساب ديسكورد", chance: 0.2 },
-  { name: "🚀 Discord Boosts", chance: 0.0000001 },
-  { name: "👑 رتبة خاصة", chance: 4 },
-  { name: "🛡️ رتبة بصلاحيات مميزة", chance: 5 },
-  { name: "💰 30M ProBot Credits", chance: 32.3199999 },
-  { name: "🍀 حظ أوفر المرة القادمة", chance: 9.08 }
-];
-
-
-// اختيار الجائزة
-function drawPrize() {
-  const random = Math.random() * 100;
-  let total = 0;
-
-  for (const prize of prizes) {
-    total += prize.chance;
-
-    if (random < total) {
-      return prize.name;
-    }
-  }
-
-  return prizes[prizes.length - 1].name;
-}
-
-
-// منع فتح الهدية أكثر من مرة على نفس المتصفح
-function showAlreadyOpened() {
-  const savedPrize = localStorage.getItem("date_gift_prize");
-
-  if (localStorage.getItem("date_gift_opened") === "true") {
-    document.getElementById("openButton").disabled = true;
-    document.getElementById("openButton").textContent =
-      "تم استلام الهدية";
-
-    document.getElementById("result").style.display = "block";
-    document.getElementById("prize").textContent =
-      savedPrize || "تم استلام هديتك مسبقاً";
-  }
-}
-
-
-// فتح الهدية
-function openGift() {
-  if (localStorage.getItem("date_gift_opened") === "true") {
-    showAlreadyOpened();
-    return;
-  }
-
-  const button = document.getElementById("openButton");
-
-  button.disabled = true;
-  button.textContent = "جاري فتح الهدية... 🎁";
-
-  setTimeout(() => {
-    const selectedPrize = drawPrize();
-
-    localStorage.setItem("date_gift_opened", "true");
-    localStorage.setItem("date_gift_prize", selectedPrize);
-
-    document.getElementById("result").style.display = "block";
-    document.getElementById("prize").textContent = selectedPrize;
-
-    button.textContent = "تم استلام الهدية";
-  }, 2200);
-}
-
-showAlreadyOpened();
-</script>
 
 </body>
 </html>
